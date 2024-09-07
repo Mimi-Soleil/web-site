@@ -5,14 +5,14 @@ $font-primary: "Work Sans", Arial, sans-serif;
 $font-secondary: "Fredericka the Great", cursive;
 
 $white: #fff;
-$black: #000000;
+$black: #202020;
 // $darken: #3a4348;
 
-$primary: #1eaaf1;
-$secondary: #fda638;
-$tertiary: #8cc152;
-$quarternary: #f1453d;
-$fifth: #5d50c6;
+$primary: #57c4e5;
+$secondary: #fbcc33;
+$tertiary: #e13700;
+$quarternary: #17bebb;
+$fifth: #04395e;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;

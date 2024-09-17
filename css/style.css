@@ -10826,6 +10826,10 @@ textarea.form-control {
   font-style: italic;
 }
 
+.dark-text {
+  color: #202020 !important;
+}
+
 #ftco-loader {
   position: fixed;
   width: 96px;

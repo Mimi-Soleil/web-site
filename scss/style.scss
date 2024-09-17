@@ -6,6 +6,7 @@ $font-secondary: "Fredericka the Great", cursive;
 
 $white: #fff;
 $black: #202020;
+$dark: #595959;
 // $darken: #3a4348;
 
 $primary: #04395e;
@@ -2077,6 +2078,10 @@ textarea.form-control {
       }
     }
   }
+}
+
+.dark-text {
+  color: $black !important;
 }
 
 #ftco-loader {

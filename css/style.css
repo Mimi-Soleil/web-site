@@ -9647,7 +9647,6 @@ h5,
 .staff .img {
   width: 100%;
   display: block;
-  background-position: top center;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;

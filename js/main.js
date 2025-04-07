@@ -1,263 +1,161 @@
-AOS.init({
-  duration: 800,
-  easing: "slide",
+document.addEventListener("DOMContentLoaded", () => {
+  setupIcons();
+  setupMenu();
+  setupContactForm();
+  setupFooterYear();
+  loadYouTubeVideos();
+  // loadBlogPosts(); // Uncomment this line to load blog posts
 });
 
-(function ($) {
-  "use strict";
+// Setup Lucide icons
+function setupIcons() {
+  lucide.createIcons();
+}
 
-  $(window).stellar({
-    responsive: true,
-    parallaxBackgrounds: true,
-    parallaxElements: true,
-    horizontalScrolling: false,
-    hideDistantElements: false,
-    scrollProperty: "scroll",
-  });
+// Setup mobile hamburger menu toggle
+function setupMenu() {
+  const menuButton = document.getElementById("menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-  var fullHeight = function () {
-    $(".js-fullheight").css("height", $(window).height());
-    $(window).resize(function () {
-      $(".js-fullheight").css("height", $(window).height());
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
     });
-  };
-  fullHeight();
+  }
+}
 
-  // loader
-  var loader = function () {
-    setTimeout(function () {
-      if ($("#ftco-loader").length > 0) {
-        $("#ftco-loader").removeClass("show");
-      }
-    }, 1);
-  };
-  loader();
+// Setup contact form submit handler
+function setupContactForm() {
+  const contactForm = document.querySelector("form");
 
-  // Scrollax
-  $.Scrollax();
-
-  var carousel = function () {
-    $(".home-slider").owlCarousel({
-      loop: true,
-      autoplay: true,
-      margin: 0,
-      animateOut: "fadeOut",
-      animateIn: "fadeIn",
-      nav: false,
-      autoplayHoverPause: false,
-      items: 1,
-      navText: [
-        "<span class='ion-md-arrow-back'></span>",
-        "<span class='ion-chevron-right'></span>",
-      ],
-      responsive: {
-        0: {
-          items: 1,
-        },
-        600: {
-          items: 1,
-        },
-        1000: {
-          items: 1,
-        },
-      },
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Merci pour votre message !");
     });
-    $(".carousel-testimony").owlCarousel({
-      autoplay: true,
-      center: true,
-      loop: true,
-      items: 1,
-      margin: 30,
-      stagePadding: 0,
-      nav: false,
-      navText: [
-        '<span class="ion-ios-arrow-back">',
-        '<span class="ion-ios-arrow-forward">',
-      ],
-      responsive: {
-        0: {
-          items: 1,
-        },
-        600: {
-          items: 1,
-        },
-        1000: {
-          items: 2,
-        },
-      },
+  }
+}
+
+// Set the footer year dynamically
+function setupFooterYear() {
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+}
+
+// Load YouTube Videos
+async function loadYouTubeVideos() {
+  const videosContainer = document.getElementById("videos-container");
+  if (!videosContainer) return;
+
+  // Step 1: Show skeletons
+  videosContainer.innerHTML = "";
+  for (let i = 0; i < 3; i++) {
+    videosContainer.appendChild(createSkeletonCard());
+  }
+
+  try {
+    const response = await fetch("/.netlify/functions/fetchYouTubeVideos");
+    const videos = await response.json();
+
+    videosContainer.innerHTML = "";
+
+    videos.forEach((video) => {
+      const videoElement = document.createElement("a");
+      videoElement.href = `https://www.youtube.com/watch?v=${video.id}`;
+      videoElement.target = "_blank";
+      videoElement.className =
+        "block bg-white p-6 rounded-lg shadow-md flex flex-col cursor-pointer hover:shadow-lg hover:scale-105 transition-transform duration-300";
+
+      videoElement.innerHTML = `
+          <img src="${video.thumbnail}" alt="${video.title}" class="w-full h-48 object-cover rounded mb-4">
+          <h3 class="text-xl font-bold mb-2">${video.title}</h3>
+        `;
+
+      videosContainer.appendChild(videoElement);
     });
-  };
-  carousel();
+  } catch (error) {
+    console.error("Erreur de chargement des vidéos:", error);
+    videosContainer.innerHTML =
+      '<p class="text-center text-gray-500">Impossible de charger les vidéos pour le moment.</p>';
+  }
+}
 
-  $("nav .dropdown").hover(
-    function () {
-      var $this = $(this);
-      // 	 timer;
-      // clearTimeout(timer);
-      $this.addClass("show");
-      $this.find("> a").attr("aria-expanded", true);
-      // $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
-      $this.find(".dropdown-menu").addClass("show");
-    },
-    function () {
-      var $this = $(this);
-      // timer;
-      // timer = setTimeout(function(){
-      $this.removeClass("show");
-      $this.find("> a").attr("aria-expanded", false);
-      // $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
-      $this.find(".dropdown-menu").removeClass("show");
-      // }, 100);
-    }
-  );
+// Load Blog Posts
+async function loadBlogPosts() {
+  const blogPostsContainer = document.getElementById("blog-posts");
+  const placeholderImage = "./images/defaultBlogImage.png";
 
-  $("#dropdown04").on("show.bs.dropdown", function () {
-    console.log("show");
-  });
+  if (!blogPostsContainer) return;
 
-  // scroll
-  var scrollWindow = function () {
-    $(window).scroll(function () {
-      var $w = $(this),
-        st = $w.scrollTop(),
-        navbar = $(".ftco_navbar"),
-        sd = $(".js-scroll-wrap");
+  // Step 1: Show skeletons
+  blogPostsContainer.innerHTML = "";
+  for (let i = 0; i < 3; i++) {
+    blogPostsContainer.appendChild(createSkeletonCard(true));
+  }
 
-      if (st > 150) {
-        if (!navbar.hasClass("scrolled")) {
-          navbar.addClass("scrolled");
-        }
-      }
-      if (st < 150) {
-        if (navbar.hasClass("scrolled")) {
-          navbar.removeClass("scrolled sleep");
-        }
-      }
-      if (st > 350) {
-        if (!navbar.hasClass("awake")) {
-          navbar.addClass("awake");
-        }
-
-        if (sd.length > 0) {
-          sd.addClass("sleep");
-        }
-      }
-      if (st < 350) {
-        if (navbar.hasClass("awake")) {
-          navbar.removeClass("awake");
-          navbar.addClass("sleep");
-        }
-        if (sd.length > 0) {
-          sd.removeClass("sleep");
-        }
-      }
-    });
-  };
-  scrollWindow();
-
-  var counter = function () {
-    $("#section-counter").waypoint(
-      function (direction) {
-        if (
-          direction === "down" &&
-          !$(this.element).hasClass("ftco-animated")
-        ) {
-          var comma_separator_number_step =
-            $.animateNumber.numberStepFactories.separator(",");
-          $(".number").each(function () {
-            var $this = $(this),
-              num = $this.data("number");
-            console.log(num);
-            $this.animateNumber(
-              {
-                number: num,
-                numberStep: comma_separator_number_step,
-              },
-              7000
-            );
-          });
-        }
-      },
-      { offset: "95%" }
+  try {
+    const response = await fetch(
+      "https://api.rss2json.com/v1/api.json?rss_url=https://mimisoleil.substack.com/feed" // Replace with your blog's RSS feed URL
     );
-  };
-  counter();
+    const data = await response.json();
 
-  var contentWayPoint = function () {
-    var i = 0;
-    $(".ftco-animate").waypoint(
-      function (direction) {
-        if (
-          direction === "down" &&
-          !$(this.element).hasClass("ftco-animated")
-        ) {
-          i++;
+    blogPostsContainer.innerHTML = "";
 
-          $(this.element).addClass("item-animate");
-          setTimeout(function () {
-            $("body .ftco-animate.item-animate").each(function (k) {
-              var el = $(this);
-              setTimeout(
-                function () {
-                  var effect = el.data("animate-effect");
-                  if (effect === "fadeIn") {
-                    el.addClass("fadeIn ftco-animated");
-                  } else if (effect === "fadeInLeft") {
-                    el.addClass("fadeInLeft ftco-animated");
-                  } else if (effect === "fadeInRight") {
-                    el.addClass("fadeInRight ftco-animated");
-                  } else {
-                    el.addClass("fadeInUp ftco-animated");
-                  }
-                  el.removeClass("item-animate");
-                },
-                k * 50,
-                "easeInOutExpo"
-              );
-            });
-          }, 100);
-        }
-      },
-      { offset: "95%" }
-    );
-  };
-  contentWayPoint();
+    data.items.slice(0, 3).forEach((post) => {
+      let imgSrc = placeholderImage;
+      const imgMatch = post.description.match(/<img[^>]+src="([^"]+)"/);
+      if (imgMatch && imgMatch[1]) {
+        imgSrc = imgMatch[1];
+      }
 
-  // magnific popup
-  $(".image-popup").magnificPopup({
-    type: "image",
-    closeOnContentClick: true,
-    closeBtnInside: false,
-    fixedContentPos: true,
-    mainClass: "mfp-no-margins mfp-with-zoom", // class to remove default margin from left and right side
-    gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0, 1], // Will preload 0 - before current, and 1 after the current image
-    },
-    image: {
-      verticalFit: true,
-    },
-    zoom: {
-      enabled: true,
-      duration: 300, // don't foget to change the duration also in CSS
-    },
-  });
+      const postElement = document.createElement("a");
+      postElement.href = post.link;
+      postElement.target = "_blank";
+      postElement.className =
+        "block bg-white p-6 rounded-lg shadow-md flex flex-col cursor-pointer hover:shadow-lg hover:scale-105 transition-transform duration-300";
 
-  $(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
-    disableOn: 700,
-    type: "iframe",
-    mainClass: "mfp-fade",
-    removalDelay: 160,
-    preloader: false,
+      postElement.innerHTML = `
+        <img src="${imgSrc}" alt="Blog Post Image" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-bold mb-2">${post.title}</h3>
+        <p class="text-gray-700 mb-4">${stripHtml(post.description).substring(
+          0,
+          100
+        )}...</p>
+      `;
 
-    fixedContentPos: false,
-  });
+      blogPostsContainer.appendChild(postElement);
+    });
+  } catch (error) {
+    console.error("Erreur lors du chargement des articles du blog:", error);
+    blogPostsContainer.innerHTML =
+      '<p class="text-center text-gray-500">Impossible de charger les articles du blog pour le moment.</p>';
+  }
+}
 
-  $(".appointment_date").datepicker({
-    format: "m/d/yyyy",
-    autoclose: true,
-  });
+// Create a generic skeleton card
+function createSkeletonCard(isBlog = false) {
+  const skeleton = document.createElement("div");
+  skeleton.className = "animate-pulse bg-white p-6 rounded-lg shadow-md";
 
-  $(".appointment_time").timepicker();
-})(jQuery);
+  skeleton.innerHTML = `
+      <div class="w-full h-48 bg-gray-300 rounded mb-4"></div>
+      <div class="h-6 bg-gray-300 rounded w-3/4 mb-2"></div>
+      <div class="h-4 bg-gray-300 rounded w-1/2"></div>
+      ${
+        isBlog
+          ? '<div class="h-4 bg-gray-300 rounded w-1/4 mt-auto"></div>'
+          : ""
+      }
+    `;
+
+  return skeleton;
+}
+
+// Strip HTML tags from a string
+function stripHtml(html) {
+  const tmp = document.createElement("div");
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || "";
+}

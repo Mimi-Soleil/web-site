@@ -1,855 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mimi Soleil</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Fredericka+the+Great"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
-    <link rel="stylesheet" href="css/animate.css" />
-
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" />
-
-    <link rel="stylesheet" href="css/aos.css" />
-
-    <link rel="stylesheet" href="css/ionicons.min.css" />
-
-    <link rel="stylesheet" href="css/flaticon.css" />
-    <link rel="stylesheet" href="css/icomoon.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="images/favicon-32x32.png"
-      sizes="32x32"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="images/favicon-16x16.png"
-      sizes="16x16"
-    />
   </head>
-  <body>
-    <div class="py-2 bg-primary">
-      <div class="container">
-        <div
-          class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0"
-        >
-          <div class="col-lg-12 d-block">
-            <div class="row d-flex">
-              <a
-                href="https://www.youtube.com/@Mimi_Soleil"
-                target="_blank"
-                class="col-md pr-4 d-flex topper align-items-center max-width-fit-content"
-              >
-                <div
-                  class="icon bg-tertiary mr-2 d-flex justify-content-center align-items-center"
-                >
-                  <span class="icon-youtube"></span>
-                </div>
-                <span class="text">@Mimi_Soleil</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light"
-      id="ftco-navbar"
-    >
-      <div class="container d-flex align-items-center">
-        <a class="navbar-brand" href="index.html">Mimi Soleil</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#ftco-nav"
-          aria-controls="ftco-nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="oi oi-menu"></span> Menu
+  <body
+    class="bg-sky-100 min-h-screen flex flex-col"
+    style="
+      background-image: url('./images/background.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    "
+  >
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <h1 class="text-3xl font-bold text-yellow-400">
+          Mimi <span class="text-red-400">Soleil</span>
+        </h1>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-4">
+          <a
+            href="#"
+            class="text-blue-600 font-semibold hover:text-yellow-400 transition"
+            >Accueil</a
+          >
+          <a
+            href="#videos"
+            class="text-blue-600 font-semibold hover:text-yellow-400 transition"
+            >Vidéos</a
+          >
+          <a
+            href="#apropos"
+            class="text-blue-600 font-semibold hover:text-yellow-400 transition"
+            >À propos</a
+          >
+          <a
+            href="#contact"
+            class="text-blue-600 font-semibold hover:text-yellow-400 transition"
+            >Contact</a
+          >
+          <a
+            href="#blog"
+            class="text-blue-600 font-semibold hover:text-yellow-400 transition"
+            >Blog</a
+          >
+        </nav>
+
+        <!-- Mobile Hamburger -->
+        <button id="menu-button" class="block md:hidden">
+          <i data-lucide="menu" class="w-8 h-8 text-blue-600"></i>
         </button>
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a href="index.html" class="nav-link pl-0">Home</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a href="about.html" class="nav-link">About</a>
-            </li>
-
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact</a>
-            </li> -->
-          </ul>
-        </div>
       </div>
-    </nav>
 
-    <section class="home-slider owl-carousel">
+      <!-- Mobile Navigation Menu -->
       <div
-        class="slider-item"
-        style="background-image: url(images/facebook-image.png)"
+        id="mobile-menu"
+        class="hidden flex-col space-y-2 mt-2 px-4 md:hidden"
       >
-        <div class="overlay"></div>
-        <div class="container">
-          <div
-            class="row no-gutters slider-text align-items-center justify-content-center"
-            data-scrollax-parent="true"
-          >
-            <div class="col-md-8 text-center ftco-animate">
-              <h1 class="mb-4">
-                Mimi Soleil:<span>Brightening Young Minds</span>
-              </h1>
-              <p>
-                <a href="#" class="btn btn-secondary px-4 py-3 mt-3"
-                  >Read More</a
-                >
-              </p>
-            </div>
-          </div>
-        </div>
+        <a href="#" class="block text-blue-600 hover:underline">Accueil</a>
+        <a href="#videos" class="block text-blue-600 hover:underline">Vidéos</a>
+        <a href="#apropos" class="block text-blue-600 hover:underline"
+          >À propos</a
+        >
+        <a href="#contact" class="block text-blue-600 hover:underline"
+          >Contact</a
+        >
+        <a href="#blog" class="block text-blue-600 hover:underline">Blog</a>
       </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="flex flex-col items-center text-center py-12">
+      <img src="./images/heroImage.png" alt="Mimi Soleil" class="h-96 mb-6" />
+      <h2 class="text-3xl font-semibold mb-6 leading-relaxed">
+        Découvrez le monde merveilleux de la musique et des contes en français !
+      </h2>
+
+      <a
+        href="#videos"
+        class="bg-yellow-400 text-white font-bold py-2 px-6 rounded-full hover:bg-yellow-300 transition"
+        >Vidéos</a
+      >
+    </section>
+
+    <!-- Popular Videos Section -->
+    <section id="videos" class="container mx-auto py-12 px-4">
+      <h2 class="text-2xl font-bold text-center mb-8">Vidéos populaires</h2>
       <div
-        class="slider-item"
-        style="background-image: url(images/episodes/learn-to-talk-episode.png)"
+        id="videos-container"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
       >
-        <div class="overlay"></div>
-        <div class="container">
-          <div
-            class="row no-gutters slider-text align-items-center justify-content-center"
-            data-scrollax-parent="true"
-          >
-            <div class="col-md-8 text-center ftco-animate">
-              <h1 class="mb-4">
-                Immersion French Education<span> For Your Child</span>
-              </h1>
-              <p>
-                <a href="#" class="btn btn-secondary px-4 py-3 mt-3"
-                  >Read More</a
-                >
-              </p>
-            </div>
-          </div>
-        </div>
+        <!-- videos will be inserted here by JavaScript -->
       </div>
     </section>
 
-    <section class="ftco-services ftco-no-pb">
-      <div class="container-wrap">
-        <div class="row no-gutters">
-          <div
-            class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-primary"
-          >
-            <div class="media block-6 d-block text-center">
-              <div
-                class="icon d-flex justify-content-center align-items-center"
-              >
-                <span class="flaticon-teacher"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Certified Teacher</h3>
-                <p>
-                  Mimi soleil is a certified teacher with over 15 years of
-                  experience
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-tertiary"
-          >
-            <div class="media block-6 d-block text-center">
-              <div
-                class="icon d-flex justify-content-center align-items-center"
-              >
-                <span class="flaticon-reading"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Immersive French</h3>
-                <p>immerse your child in French right from home</p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-secondary"
-          >
-            <div class="media block-6 d-block text-center">
-              <div
-                class="icon d-flex justify-content-center align-items-center"
-              >
-                <span class="flaticon-books"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading dark-text">Educational Content</h3>
-                <p class="dark-text">
-                  learn letters, numbers, colors, animals, body parts, vehicles,
-                  food, holidays...and more!
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate bg-quarternary"
-          >
-            <div class="media block-6 d-block text-center">
-              <div
-                class="icon d-flex justify-content-center align-items-center"
-              >
-                <span class="flaticon-diploma"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Interactive</h3>
-                <p>
-                  engage in an interactive learning experience that encourages
-                  children to play along at home with their parents
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- About Section -->
+    <section id="apropos" class="bg-white py-12 px-4">
+      <div class="container mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-4">À propos</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto">
+          Mimi Soleil est une créatrice passionnée de vidéos éducatives en
+          français pour les petits et tout-petits. Avec son ukulélé et son
+          énergie ensoleillée, elle rend l'apprentissage du français amusant et
+          engageant.
+        </p>
       </div>
     </section>
-
-    <section class="ftco-section ftco-no-pt ftc-no-pb">
-      <div class="container">
-        <div class="row">
-          <div class="order-md-last wrap-about py-5 wrap-about">
-            <div class="text px-4 ftco-animate">
-              <h2 class="mb-4">Welcome to Mimi Soleil Learning School</h2>
-              <p>
-                Vidéos éducatives pour les petits et les tout-petits avec Mimi
-                Soleil, une jeune maman et une vraie enseignante avec 15 ans
-                d'expérience! Mimi Soleil accompagne les enfants dans leurs
-                apprentissages grâce à des vidéos interactives en français.
-              </p>
-              <p>
-                Mimi Soleil aborde les lettres, les chiffres, les couleurs, les
-                animaux, les parties du corps, les véhicules, les aliments, les
-                fêtes... Toute la famille peut regarder les vidéos et apprendre
-                en s'amusant.
-              </p>
-              <p>
-                <a href="#" class="btn btn-secondary px-4 py-3">Read More</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section ftco-no-pb">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-2">
-          <div class="col-md-8 text-center heading-section ftco-animate">
-            <h2 class="mb-4"><span>Our</span> Team</h2>
-            <p>
-              Separated they live in. A small river named Duden flows by their
-              place and supplies it with the necessary regelialia. It is a
-              paradisematic country
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-yellow-50 py-12 px-4">
+      <div class="container mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-8">Témoignages</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <p class="text-gray-700 mb-4">
+              "Hello !! My 16-month-old has learned so much thanks to your
+              videos. The daycare teachers tell us that she recognizes so many
+              songs, numbers, colors, and animals, and we tell them it's all
+              thanks to you!"
+            </p>
+            <p class="font-semibold text-yellow-500">
+              - Joannie (translated from French)
             </p>
           </div>
-        </div>
-        <div class="row justify-content-between">
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="staff">
-              <div class="img-wrap d-flex align-items-stretch">
-                <div
-                  class="img align-self-stretch"
-                  style="background-image: url(images/team-photos/mimi-photo.png)"
-                ></div>
-              </div>
-              <div class="text pt-3 text-center">
-                <h3>Mimi Soleil</h3>
-                <span class="position mb-2">Host and Teacher</span>
-                <div class="faded">
-                  <p>
-                    A certified French teacher with over 15 years of experience
-                  </p>
-                  <ul class="ftco-social text-center">
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-twitter"></span></a>
-                    </li>
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-facebook"></span></a>
-                    </li>
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-google-plus"></span></a>
-                    </li>
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-instagram"></span></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="staff">
-              <div class="img-wrap d-flex align-items-stretch">
-                <div
-                  class="img align-self-stretch"
-                  style="background-image: url(images/team-photos/marie-photo.png)"
-                ></div>
-              </div>
-              <div class="text pt-3 text-center">
-                <h3>Marie</h3>
-                <span class="position mb-2">Musician</span>
-                <div class="faded">
-                  <p>
-                    A teacher and musician, Marie provides the music for Mimi
-                    Soleil
-                  </p>
-                  <ul class="ftco-social text-center">
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-twitter"></span></a>
-                    </li>
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-facebook"></span></a>
-                    </li>
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-google-plus"></span></a>
-                    </li>
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-instagram"></span></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="staff">
-              <div class="img-wrap d-flex align-items-stretch">
-                <div
-                  class="img align-self-stretch"
-                  style="background-image: url(images/team-photos/lulu-photo.png)"
-                ></div>
-              </div>
-              <div class="text pt-3 text-center">
-                <h3>Lulu</h3>
-                <span class="position mb-2">Co-host</span>
-                <div class="faded">
-                  <p>
-                    Lulu is a magical creature and inquisitive child who loves
-                    carrots and learns something new every day.
-                  </p>
-                  <ul class="ftco-social text-center">
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-twitter"></span></a>
-                    </li>
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-facebook"></span></a>
-                    </li>
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-google-plus"></span></a>
-                    </li>
-                    <li class="ftco-animate">
-                      <a href="#"><span class="icon-instagram"></span></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-		<section class="ftco-section"></section>
-			<div class="container">
-				<div class="row justify-content-center mb-5 pb-2">
-          <div class="col-md-8 text-center heading-section ftco-animate">
-            <h2 class="mb-4"><span>Watch an Episode of</span> Mimi Soleil</h2>
-            <p>Fun and educational, Mimi Soleil is always ready to teach children something new</p>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <p class="text-gray-700 mb-4">
+              "My husband is Swiss (from the French-speaking side). He speaks
+              French to our daughter. We live in the Philippines and in order
+              for her to still be proficient in French, I rely on your show to
+              practice her ears. Thank you so much!! We appreciate you more than
+              you know."
+            </p>
+            <p class="font-semibold text-yellow-500">- ai</p>
           </div>
-        </div>	
-				<div class="row">
-					<div class="col-md-6 course d-lg-flex ftco-animate">
-						<div class="img" style="background-image: url(images/episodes/alphabet-episode.png);"></div>
-						<div class="text bg-light p-4">
-							<h3><a href="https://www.youtube.com/watch?v=IiUPQaQKbKs" target="_blank">L'alphabet Des Animaux</a></h3>
-							<p>Mimi Soleil teaches children the alphabet in a fun and interactive way. Through vibrant visuals, playful songs, and engaging activities, Mimi introduces each letter with relatable words and cheerful examples. </p>
-						</div>
-					</div>
-					<div class="col-md-6 course d-lg-flex ftco-animate">
-						<div class="img" style="background-image: url(images/episodes/colors-episode.png);"></div>
-						<div class="text bg-light p-4">
-							<h3><a href="https://www.youtube.com/watch?v=CpqvNjCIh9M" target="_blank">Les couleurs</a></h3>
-							<p>Come along with Mimi Soleil as she teaches the colors through catchy songs, fun visuals, and hands-on activities</p>
-						</div>
-					</div>
-					<div class="col-md-6 course d-lg-flex ftco-animate">
-						<div class="img" style="background-image: url(images/episodes/numbers-episode.png);"></div>
-						<div class="text bg-light p-4">
-							<h3><a href="https://www.youtube.com/watch?v=x9466N44Wyw" target="_blank">Les nombres</a></h3>
-							<p>Mimi Soleil introduces children to numbers through colorful visuals, playful songs, and interactive games.</p>
-						</div>
-					</div>
-					<div class="col-md-6 course d-lg-flex ftco-animate">
-						<div class="img" style="background-image: url(images/episodes/farm-animals-episode.png);"></div>
-						<div class="text bg-light p-4">
-							<h3><a href="https://www.youtube.com/watch?v=-W6WJqqZbhs" target="_blank">Les animaux de la Ferme</a></h3>
-							<p>Mimi teaches the names and sounds of animals like cows, chickens, and pigs, while the children engage in fun activities like animal matching and imitating their favorite farm friends.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
 
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_4.jpg);" data-stellar-background-ratio="0.5">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-2">
-          <div class="col-md-8 text-center heading-section heading-section-black ftco-animate">
-            <h2 class="mb-4"><span>Mimi Soleil's Journey in </span> Numbers</h2>
-            <p>Mimi Soleil's YouTube channel has made learning French fun and accessible for young children worldwide. Her engaging videos blend education with creativity, building a strong community of learners.</p>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <p class="text-gray-700 mb-4">
+              "Mimi Soleil, my daughter loves you! She is 1.5 years old. We are
+              in the US but her father came from France and we have been
+              struggling to find French learning resources for her. She loves
+              Mimi Soleil and Marie!! She’s already learning so much! Merci and
+              keep the good work! Bisous!!"
+            </p>
+            <p class="font-semibold text-yellow-500">- Moni</p>
           </div>
-        </div>	
-    		<div class="row d-md-flex align-items-center justify-content-center">
-    			<div class="col-lg-10">
-    				<div class="row d-md-flex align-items-center">
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		            	<div class="icon"><span class="flaticon-doctor"></span></div>
-		              <div class="text">
-		                <strong class="number" data-number="22">0</strong>
-		                <span>Videos</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		            	<div class="icon"><span class="flaticon-doctor"></span></div>
-		              <div class="text">
-		                <strong class="number" data-number="9000000">0</strong>
-		                <span>Views</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		            	<div class="icon"><span class="flaticon-doctor"></span></div>
-		              <div class="text">
-		                <strong class="number" data-number="32000">0</strong>
-		                <span>Subscribers</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		            	<div class="icon"><span class="flaticon-doctor"></span></div>
-		              <div class="text">
-		                <strong class="number" data-number="1500000">0</strong>
-		                <span>Hours Watched</span>
-		              </div>
-		            </div>
-		          </div>
-	          </div>
-          </div>
-        </div>
-    	</div>
-    </section>
 
-    <section class="ftco-section testimony-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-2">
-          <div class="col-md-8 text-center heading-section ftco-animate">
-            <h2 class="mb-4"><span>What Parents</span> Says About Us</h2>
-            <p>
-              Separated they live in. A small river named Duden flows by their
-              place and supplies it with the necessary regelialia. It is a
-              paradisematic country
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <p class="text-gray-700 mb-4">
+              "Merci, your channel is incredible. My 16-month-old daughter has
+              been watching you for months. We're English, my French, I'm
+              embarrassed to say, is appalling. As my father lives in Brittany,
+              I am determined to make sure my daughter speaks French and you are
+              an integral part of that journey! Thank you so much!"
+            </p>
+            <p class="font-semibold text-yellow-500">
+              - Katy (translated from French)
             </p>
           </div>
-        </div>
-        <div class="row ftco-animate justify-content-center">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel">
-              <div class="item">
-                <div class="testimony-wrap d-flex">
-                  <div
-                    class="user-img mr-4"
-                    style="background-image: url(images/teacher-1.jpg)"
-                  ></div>
-                  <div class="text ml-2 bg-light">
-                    <span
-                      class="quote d-flex align-items-center justify-content-center"
-                    >
-                      <i class="icon-quote-left"></i>
-                    </span>
-                    <p>
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
-                    <p class="name">Racky Henderson</p>
-                    <span class="position">Father</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap d-flex">
-                  <div
-                    class="user-img mr-4"
-                    style="background-image: url(images/teacher-2.jpg)"
-                  ></div>
-                  <div class="text ml-2 bg-light">
-                    <span
-                      class="quote d-flex align-items-center justify-content-center"
-                    >
-                      <i class="icon-quote-left"></i>
-                    </span>
-                    <p>
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
-                    <p class="name">Henry Dee</p>
-                    <span class="position">Mother</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap d-flex">
-                  <div
-                    class="user-img mr-4"
-                    style="background-image: url(images/teacher-3.jpg)"
-                  ></div>
-                  <div class="text ml-2 bg-light">
-                    <span
-                      class="quote d-flex align-items-center justify-content-center"
-                    >
-                      <i class="icon-quote-left"></i>
-                    </span>
-                    <p>
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
-                    <p class="name">Mark Huff</p>
-                    <span class="position">Mother</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap d-flex">
-                  <div
-                    class="user-img mr-4"
-                    style="background-image: url(images/teacher-4.jpg)"
-                  ></div>
-                  <div class="text ml-2 bg-light">
-                    <span
-                      class="quote d-flex align-items-center justify-content-center"
-                    >
-                      <i class="icon-quote-left"></i>
-                    </span>
-                    <p>
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
-                    <p class="name">Rodel Golez</p>
-                    <span class="position">Mother</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap d-flex">
-                  <div
-                    class="user-img mr-4"
-                    style="background-image: url(images/teacher-1.jpg)"
-                  ></div>
-                  <div class="text ml-2 bg-light">
-                    <span
-                      class="quote d-flex align-items-center justify-content-center"
-                    >
-                      <i class="icon-quote-left"></i>
-                    </span>
-                    <p>
-                      Far far away, behind the word mountains, far from the
-                      countries Vokalia and Consonantia, there live the blind
-                      texts.
-                    </p>
-                    <p class="name">Ken Bosh</p>
-                    <span class="position">Mother</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section
-      class="ftco-intro bg-primary"
-      data-stellar-background-ratio="0.5"
-    >
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9">
-            <h2>Support free access to French education</h2>
-            <p class="mb-0">
-              Thank you for your support! A financial boost would allow us to buy new classroom supplies and purchase audio-visual equipment to create new videos to delight your little ones. - Mimi Soleil, Marie, and Lulu
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <p class="text-gray-700 mb-4">
+              "Hello Emilie, I wanted to express my gratitude and also to inform
+              you that my daughter has made lightning progress thanks to your
+              learning methods and is now a member of your fan club in first
+              place!"
+            </p>
+            <p class="font-semibold text-yellow-500">
+              - Oli (translated from French)
             </p>
           </div>
-          <div class="col-md-3 d-flex align-items-center">
-            <p class="mb-0">
-              <a href="https://ko-fi.com/mimisoleil" target="_blank" class="btn btn-tertiary px-4 py-3"
-                >I support the channel</a
-              >
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <p class="text-gray-700 mb-4">
+              "Hello, Mimi Soleil! young parents, we wanted to congratulate you
+              and thank you for your videos, which our almost 2-year-old
+              daughter loves very much! You manage to find the right rhythm and
+              the right words to captivate and awaken, bravo! We dream that one
+              day she'll find a teacher like you :D"
+            </p>
+            <p class="font-semibold text-yellow-500">
+              - Julien (translated from French)
             </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Blog Section -->
 
-    <section class="ftco-gallery">
-      <div class="container-wrap">
-        <div class="row no-gutters">
-          <div class="col-md-3 ftco-animate">
-            <a
-              href="images/image_1.jpg"
-              class="gallery image-popup img d-flex align-items-center"
-              style="background-image: url(images/course-1.jpg)"
-            >
-              <div
-                class="icon mb-4 d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-instagram"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <a
-              href="images/image_2.jpg"
-              class="gallery image-popup img d-flex align-items-center"
-              style="background-image: url(images/image_2.jpg)"
-            >
-              <div
-                class="icon mb-4 d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-instagram"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <a
-              href="images/image_3.jpg"
-              class="gallery image-popup img d-flex align-items-center"
-              style="background-image: url(images/image_3.jpg)"
-            >
-              <div
-                class="icon mb-4 d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-instagram"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <a
-              href="images/image_4.jpg"
-              class="gallery image-popup img d-flex align-items-center"
-              style="background-image: url(images/image_4.jpg)"
-            >
-              <div
-                class="icon mb-4 d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-instagram"></span>
-              </div>
-            </a>
-          </div>
-        </div>
+    <section id="blog" class="container mx-auto py-12 px-4">
+      <h2 class="text-2xl font-bold text-center mb-8">Blog</h2>
+      <div
+        id="blog-posts"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+      >
+        <a
+          href="#"
+          target="_blank"
+          class="block bg-white p-6 rounded-lg shadow-md flex flex-col cursor-pointer hover:shadow-lg hover:scale-105 transition-transform duration-300"
+        >
+          <img
+            src="./images/defaultBlogImage.png"
+            alt="Blog Post Image"
+            class="w-full h-48 object-cover rounded mb-4"
+          />
+          <h3 class="text-xl font-bold mb-2">
+            5 Chansons Françaises Préférées des Tout-Petits
+          </h3>
+          <p class="text-gray-700 mb-4">
+            Découvrez les chansons préférées des enfants pour développer leur
+            amour du français et de la musique !
+          </p>
+        </a>
+
+        <a
+          href="#"
+          target="_blank"
+          class="block bg-white p-6 rounded-lg shadow-md flex flex-col cursor-pointer hover:shadow-lg hover:scale-105 transition-transform duration-300"
+        >
+          <img
+            src="./images/defaultBlogImage.png"
+            alt="Blog Post Image"
+            class="w-full h-48 object-cover rounded mb-4"
+          />
+          <h3 class="text-xl font-bold mb-2">
+            Créer une Routine en Français à la Maison
+          </h3>
+          <p class="text-gray-700 mb-4">
+            Intégrez facilement le français dans votre quotidien grâce à nos
+            astuces simples et amusantes.
+          </p>
+        </a>
+
+        <a
+          href="#"
+          target="_blank"
+          class="block bg-white p-6 rounded-lg shadow-md flex flex-col cursor-pointer hover:shadow-lg hover:scale-105 transition-transform duration-300"
+        >
+          <img
+            src="./images/defaultBlogImage.png"
+            alt="Blog Post Image"
+            class="w-full h-48 object-cover rounded mb-4"
+          />
+          <h3 class="text-xl font-bold mb-2">
+            Activités Ludiques pour Apprendre les Couleurs en Français
+          </h3>
+          <p class="text-gray-700 mb-4">
+            Découvrez des jeux amusants pour aider vos enfants à apprendre les
+            couleurs en français.
+          </p>
+        </a>
       </div>
     </section>
 
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
-        <div class="row mb-5 justify-content-between">
-          <div class="col-md-6 col-lg-3">
-            <div class="ftco-footer-widget mb-5">
-              <h2 class="ftco-heading-2">Have a Questions?</h2>
-              <div class="block-23 mb-3">
-                <ul>
-                  <li>
-                    <span class="icon icon-map-marker"></span
-                    ><span class="text"
-                      >203 Fake St. Mountain View, San Francisco, California,
-                      USA</span
-                    >
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><span class="icon icon-phone"></span
-                      ><span class="text">+2 392 3929 210</span></a
-                    >
-                  </li>
-                  <li>
-                    <a href="#"
-                      ><span class="icon icon-envelope"></span
-                      ><span class="text">info@yourdomain.com</span></a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="ftco-footer-widget mb-5 ml-md-4">
-              <h2 class="ftco-heading-2">Links</h2>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#"
-                    ><span class="ion-ios-arrow-round-forward mr-2"></span
-                    >Home</a
-                  >
-                </li>
-                <!-- <li>
-                  <a href="#"
-                    ><span class="ion-ios-arrow-round-forward mr-2"></span
-                    >About</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="ion-ios-arrow-round-forward mr-2"></span
-                    >Services</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="ion-ios-arrow-round-forward mr-2"></span
-                    >Deparments</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="ion-ios-arrow-round-forward mr-2"></span
-                    >Contact</a
-                  >
-                </li> -->
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <!-- <div class="ftco-footer-widget mb-5">
-              <h2 class="ftco-heading-2">Subscribe Us!</h2>
-              <form action="#" class="subscribe-form">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control mb-2 text-center"
-                    placeholder="Enter email address"
-                  />
-                  <input
-                    type="submit"
-                    value="Subscribe"
-                    class="form-control submit px-3"
-                  />
-                </div>
-              </form>
-            </div> -->
-            <div class="ftco-footer-widget mb-5">
-              <h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
-              <ul
-                class="ftco-footer-social list-unstyled float-md-left float-lft mt-3"
-              >
-                <li class="ftco-animate">
-                  <a href="https://www.youtube.com/@Mimi_Soleil" target="_blank"
-                    ><span class="icon-youtube"></span
-                  ></a>
-                </li>
-                <li class="ftco-animate">
-                  <a href="#"><span class="icon-twitter"></span></a>
-                </li>
-                <li class="ftco-animate">
-                  <a href="#"><span class="icon-facebook"></span></a>
-                </li>
-                <li class="ftco-animate">
-                  <a href="#"><span class="icon-instagram"></span></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              All rights reserved | This template is made with
-              <i class="icon-heart" aria-hidden="true"></i> by
-              <a href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-        </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 px-4">
+      <div class="container mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-4">Contactez-nous</h2>
+        <p class="text-gray-700 mb-6">
+          Envoyez-nous un message pour toute question ou collaboration !
+        </p>
+        <form class="max-w-md mx-auto">
+          <input
+            type="text"
+            placeholder="Nom"
+            class="w-full mb-4 px-4 py-2 rounded shadow"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            class="w-full mb-4 px-4 py-2 rounded shadow"
+          />
+          <textarea
+            placeholder="Votre message"
+            class="w-full mb-4 px-4 py-2 rounded shadow"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-yellow-400 text-white font-bold py-2 px-6 rounded-full hover:bg-yellow-300 transition"
+          >
+            Envoyer
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-white py-6 mt-auto">
+      <div class="container mx-auto text-center text-gray-500">
+        &copy; <span id="year"></span> Mimi Soleil. Tous droits réservés.
       </div>
     </footer>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
 
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen">
-      <svg class="circular" width="48px" height="48px">
-        <circle
-          class="path-bg"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke="#eeeeee"
-        />
-        <circle
-          class="path"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke="#F96D00"
-        />
-      </svg>
-    </div>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="js/google-map.js"></script>
-    <script src="js/main.js"></script>
+    <script src="./js/main.js" defer></script>
   </body>
 </html>

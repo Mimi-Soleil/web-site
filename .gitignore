@@ -1,24 +1,24 @@
-# Node modules
+# Ignore environment variables
+.env
+
+# Ignore node_modules (Netlify CLI and functions may install small dependencies)
 node_modules/
 
-# Logs
-logs/
-*.log
+# Ignore Netlify build folder if it appears
+.netlify/
+
+# macOS Finder junk
+.DS_Store
+
+# VS Code settings folder (optional, if you use VSCode)
+.vscode/
+
+# log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Temporary files
+# Ignore anything tempy
+*.log
 *.tmp
 *.swp
-
-# IDE specific files
-.vscode/
-
-# Other system files
-$RECYCLE.BIN/
-desktop.ini

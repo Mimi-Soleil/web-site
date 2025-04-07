@@ -1,84 +1,85 @@
-# Mimi Soleil - Site Web Officiel
+# Mimi Soleil - Official Website
 
-Bienvenue sur le site officiel de **Mimi Soleil** — créatrice de vidéos éducatives en français pour les tout-petits !
+Welcome to the official website of **Mimi Soleil** — creator of educational French videos for young children!
 
-Ce site présente :
+This site features:
 
-- 🎶 Des chansons et des contes en français
-- 🎥 Les vidéos YouTube les plus populaires
-- ✍️ Un blog pour les parents
-- 💬 Des témoignages de familles du monde entier
+- 🎶 French songs and stories
+- 🎥 The most popular YouTube videos
+- ✍️ A blog for parents
+- 💬 Testimonials from families around the world
 
 ---
 
-## 🚀 Technologies Utilisées
+## 🚀 Technologies Used
 
 - **HTML5**
 - **TailwindCSS**
 - **Vanilla JavaScript**
 - **Lucide Icons**
 - **Netlify Functions** (serverless API)
-- **Substack** (intégration du blog)
-- **YouTube API** (pour charger dynamiquement les vidéos)
+- **Substack** (blog integration)
+- **YouTube API** (to dynamically load videos)
 
 ---
 
-## 📂 Structure du projet
+## 📂 Project Structure
 
 \```
-/images → Images du site (logo, héros, arrière-plan, etc.)
-/netlify/functions → Fonctions serverless pour l'API YouTube
-index.html → Fichier principal du site
-main.js → JavaScript principal (chargement dynamique)
-tailwind.config.js (si nécessaire plus tard)
+/images → Site images (logo, hero, background, etc.)
+/netlify/functions → Serverless functions for YouTube API
+index.html → Main site file
+main.js → Main JavaScript (dynamic loading)
+tailwind.config.js (if needed later)
 \```
 
 ---
 
-## 📦 Installation locale
+## 📦 Local Installation
 
-1. Clonez ce dépôt :
+1. Clone this repository:
    \`\`\`bash
-   git clone <url-du-repo>
-   cd nom-du-dossier
+   git clone <repo-url>
+   cd project-folder
    \`\`\`
 
-2. Installez Netlify CLI si ce n'est pas déjà fait :
+2. Install the Netlify CLI if you don't have it yet:
    \`\`\`bash
    npm install -g netlify-cli
    \`\`\`
 
-3. Configurez votre fichier `.env` :
+3. Set up your `.env` file:
    \`\`\`bash
-   YOUTUBE_API_KEY=VotreCléAPIYouTube
+   YOUTUBE_API_KEY=YourYouTubeAPIKey
    \`\`\`
 
-4. Lancez le serveur local :
+4. Start the local server:
    \`\`\`bash
    netlify dev
    \`\`\`
 
-Le site sera disponible sur [http://localhost:8888](http://localhost:8888).
+The site will be available at [http://localhost:8888](http://localhost:8888).
 
 ---
 
-## 🌎 Déploiement
+## 🌎 Deployment
 
-Le site est conçu pour être déployé facilement via **Netlify**.
-
----
-
-## ✨ À faire
-
-- [ ] Ajouter un favicon
-- [ ] Optimiser les images
-- [ ] Ajouter un effet d'animation subtile sur les nuages
-- [ ] Optimisation SEO de base (titre, description, balises OpenGraph)
+The site is designed to be easily deployed via **Netlify**.
 
 ---
 
-## 🧡 Remerciements
+## ✨ To-Do
 
-Merci à toutes les familles qui soutiennent **Mimi Soleil** ! Ce site est construit avec soin pour continuer à apporter musique, histoires et rires aux petits explorateurs francophones du monde entier.
+- [ ] Add a favicon
+- [ ] Optimize images
+- [ ] Add subtle cloud animation
+- [ ] Basic SEO optimization (title, description, OpenGraph tags)
+
+---
+
+## 🧡 Thanks
+
+Thanks to all the families who support **Mimi Soleil**!  
+This site is lovingly built to continue bringing music, stories, and laughter to young French-speaking explorers around the world.
 
 ---

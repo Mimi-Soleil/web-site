@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html class="scroll-smooth" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mimi Soleil</title>
+    <meta
+      name="description"
+      content="Mimi Soleil creates educational French videos for young children, teaching language through music, stories, and fun adventures!"
+    />
+
+    <title>Mimi Soleil | Fun French Learning Videos for Kids</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/favicon-16x16.png"
+      sizes="16x16"
+    />
   </head>
   <body
     class="bg-sky-100 min-h-screen flex flex-col"
@@ -17,36 +35,31 @@
     <!-- Header -->
     <header class="bg-white shadow-md py-4">
       <div class="container mx-auto flex justify-between items-center px-4">
-        <h1 class="text-3xl font-bold text-yellow-400">
+        <h1 class="text-3xl font-bold text-amber-500 font-bold">
           Mimi <span class="text-red-400">Soleil</span>
         </h1>
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex space-x-4">
           <a
-            href="#"
-            class="text-blue-600 font-semibold hover:text-yellow-400 transition"
-            >Accueil</a
-          >
-          <a
             href="#videos"
-            class="text-blue-600 font-semibold hover:text-yellow-400 transition"
-            >Vidéos</a
+            class="text-blue-600 font-semibold hover:text-amber-500 font-bold transition"
+            >Videos</a
           >
           <a
             href="#apropos"
-            class="text-blue-600 font-semibold hover:text-yellow-400 transition"
-            >À propos</a
-          >
-          <a
-            href="#contact"
-            class="text-blue-600 font-semibold hover:text-yellow-400 transition"
-            >Contact</a
+            class="text-blue-600 font-semibold hover:text-amber-500 font-bold transition"
+            >About</a
           >
           <a
             href="#blog"
-            class="text-blue-600 font-semibold hover:text-yellow-400 transition"
+            class="text-blue-600 font-semibold hover:text-amber-500 font-bold transition"
             >Blog</a
+          >
+          <a
+            href="#contact"
+            class="text-blue-600 font-semibold hover:text-amber-500 font-bold transition"
+            >Contact</a
           >
         </nav>
 
@@ -61,11 +74,9 @@
         id="mobile-menu"
         class="hidden flex-col space-y-2 mt-2 px-4 md:hidden"
       >
-        <a href="#" class="block text-blue-600 hover:underline">Accueil</a>
-        <a href="#videos" class="block text-blue-600 hover:underline">Vidéos</a>
-        <a href="#apropos" class="block text-blue-600 hover:underline"
-          >À propos</a
-        >
+        <a href="#" class="block text-blue-600 hover:underline">Home</a>
+        <a href="#videos" class="block text-blue-600 hover:underline">Videos</a>
+        <a href="#apropos" class="block text-blue-600 hover:underline">About</a>
         <a href="#contact" class="block text-blue-600 hover:underline"
           >Contact</a
         >
@@ -75,21 +86,25 @@
 
     <!-- Hero Section -->
     <section class="flex flex-col items-center text-center py-12">
-      <img src="./images/heroImage.png" alt="Mimi Soleil" class="h-96 mb-6" />
+      <img
+        src="./images/heroImage.png"
+        alt="Mimi Soleil"
+        class="w-full max-w-md h-auto mb-6"
+      />
       <h2 class="text-3xl font-semibold mb-6 leading-relaxed">
-        Découvrez le monde merveilleux de la musique et des contes en français !
+        Discover the wonderful world of music and storytelling in French!
       </h2>
 
       <a
         href="#videos"
-        class="bg-yellow-400 text-white font-bold py-2 px-6 rounded-full hover:bg-yellow-300 transition"
-        >Vidéos</a
+        class="bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-400 transition"
+        >Videos</a
       >
     </section>
 
     <!-- Popular Videos Section -->
     <section id="videos" class="container mx-auto py-12 px-4">
-      <h2 class="text-2xl font-bold text-center mb-8">Vidéos populaires</h2>
+      <h2 class="text-2xl font-bold text-center mb-8">Popular Videos</h2>
       <div
         id="videos-container"
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
@@ -101,20 +116,21 @@
     <!-- About Section -->
     <section id="apropos" class="bg-white py-12 px-4">
       <div class="container mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-4">À propos</h2>
+        <h2 class="text-2xl font-bold mb-4">About</h2>
         <p class="text-gray-700 max-w-2xl mx-auto">
-          Mimi Soleil est une créatrice passionnée de vidéos éducatives en
-          français pour les petits et tout-petits. Avec son ukulélé et son
-          énergie ensoleillée, elle rend l'apprentissage du français amusant et
-          engageant.
+          Mimi Soleil is a passionate creator of educational videos in French
+          for young children and toddlers. With her ukulele and sunny energy,
+          she makes learning French fun and engaging.
         </p>
       </div>
     </section>
+
     <!-- Testimonials Section -->
-    <section id="testimonials" class="bg-yellow-50 py-12 px-4">
+    <section id="testimonials" class="bg-amber-50 py-12 px-4">
       <div class="container mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-8">Témoignages</h2>
+        <h2 class="text-2xl font-bold mb-8">Testimonials</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Testimonials left in English as they already are -->
           <div class="bg-white p-6 rounded-lg shadow-md">
             <p class="text-gray-700 mb-4">
               "Hello !! My 16-month-old has learned so much thanks to your
@@ -122,7 +138,7 @@
               songs, numbers, colors, and animals, and we tell them it's all
               thanks to you!"
             </p>
-            <p class="font-semibold text-yellow-500">
+            <p class="font-semibold text-amber-500">
               - Joannie (translated from French)
             </p>
           </div>
@@ -135,7 +151,7 @@
               practice her ears. Thank you so much!! We appreciate you more than
               you know."
             </p>
-            <p class="font-semibold text-yellow-500">- ai</p>
+            <p class="font-semibold text-amber-500">- ai</p>
           </div>
 
           <div class="bg-white p-6 rounded-lg shadow-md">
@@ -146,7 +162,7 @@
               Mimi Soleil and Marie!! She’s already learning so much! Merci and
               keep the good work! Bisous!!"
             </p>
-            <p class="font-semibold text-yellow-500">- Moni</p>
+            <p class="font-semibold text-amber-500">- Moni</p>
           </div>
 
           <div class="bg-white p-6 rounded-lg shadow-md">
@@ -157,7 +173,7 @@
               I am determined to make sure my daughter speaks French and you are
               an integral part of that journey! Thank you so much!"
             </p>
-            <p class="font-semibold text-yellow-500">
+            <p class="font-semibold text-amber-500">
               - Katy (translated from French)
             </p>
           </div>
@@ -169,7 +185,7 @@
               learning methods and is now a member of your fan club in first
               place!"
             </p>
-            <p class="font-semibold text-yellow-500">
+            <p class="font-semibold text-amber-500">
               - Oli (translated from French)
             </p>
           </div>
@@ -182,7 +198,7 @@
               the right words to captivate and awaken, bravo! We dream that one
               day she'll find a teacher like you :D"
             </p>
-            <p class="font-semibold text-yellow-500">
+            <p class="font-semibold text-amber-500">
               - Julien (translated from French)
             </p>
           </div>
@@ -191,7 +207,6 @@
     </section>
 
     <!-- Blog Section -->
-
     <section id="blog" class="container mx-auto py-12 px-4">
       <h2 class="text-2xl font-bold text-center mb-8">Blog</h2>
       <div
@@ -209,11 +224,11 @@
             class="w-full h-48 object-cover rounded mb-4"
           />
           <h3 class="text-xl font-bold mb-2">
-            5 Chansons Françaises Préférées des Tout-Petits
+            5 Favorite French Songs for Toddlers
           </h3>
           <p class="text-gray-700 mb-4">
-            Découvrez les chansons préférées des enfants pour développer leur
-            amour du français et de la musique !
+            Discover kids' favorite songs to help them fall in love with French
+            and music!
           </p>
         </a>
 
@@ -228,11 +243,11 @@
             class="w-full h-48 object-cover rounded mb-4"
           />
           <h3 class="text-xl font-bold mb-2">
-            Créer une Routine en Français à la Maison
+            Creating a French Routine at Home
           </h3>
           <p class="text-gray-700 mb-4">
-            Intégrez facilement le français dans votre quotidien grâce à nos
-            astuces simples et amusantes.
+            Easily integrate French into your daily life with our simple and fun
+            tips.
           </p>
         </a>
 
@@ -247,11 +262,11 @@
             class="w-full h-48 object-cover rounded mb-4"
           />
           <h3 class="text-xl font-bold mb-2">
-            Activités Ludiques pour Apprendre les Couleurs en Français
+            Fun Activities for Learning Colors in French
           </h3>
           <p class="text-gray-700 mb-4">
-            Découvrez des jeux amusants pour aider vos enfants à apprendre les
-            couleurs en français.
+            Discover fun games to help your children learn their colors in
+            French!
           </p>
         </a>
       </div>
@@ -260,14 +275,14 @@
     <!-- Contact Section -->
     <section id="contact" class="py-12 px-4">
       <div class="container mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-4">Contactez-nous</h2>
+        <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
         <p class="text-gray-700 mb-6">
-          Envoyez-nous un message pour toute question ou collaboration !
+          Send us a message for any questions or collaborations!
         </p>
         <form class="max-w-md mx-auto">
           <input
             type="text"
-            placeholder="Nom"
+            placeholder="Name"
             class="w-full mb-4 px-4 py-2 rounded shadow"
           />
           <input
@@ -276,27 +291,28 @@
             class="w-full mb-4 px-4 py-2 rounded shadow"
           />
           <textarea
-            placeholder="Votre message"
+            placeholder="Your message"
             class="w-full mb-4 px-4 py-2 rounded shadow"
           ></textarea>
           <button
             type="submit"
-            class="bg-yellow-400 text-white font-bold py-2 px-6 rounded-full hover:bg-yellow-300 transition"
+            class="bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-400 transition"
           >
-            Envoyer
+            Send
           </button>
         </form>
       </div>
     </section>
+
     <!-- Footer -->
     <footer class="bg-white py-6 mt-auto">
       <div class="container mx-auto text-center text-gray-500">
-        &copy; <span id="year"></span> Mimi Soleil. Tous droits réservés.
+        &copy; <span id="year"></span> Mimi Soleil. All rights reserved.
       </div>
     </footer>
+
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <script src="https://cdn.tailwindcss.com" defer></script>
-
     <script src="./js/main.js" defer></script>
   </body>
 </html>
